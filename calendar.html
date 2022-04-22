@@ -1,23 +1,31 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<title>Latrobe Dashboard</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="https://www.webcodegeeks.com/wp-content/litespeed/localres/aHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS8=bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Latrobe Dashboard</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css" />
+    <link href="StyleSheet7.css" rel="stylesheet" />
 
-<link rel="stylesheet" type="text/css" href="css/evo-calendar.css"/>
-<link rel="stylesheet" type="text/css" href="css/evo-calendar.royal-navy.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://www.webcodegeeks.com/wp-content/litespeed/localres/aHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS8=bootstrap/3.3.4/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://www.webcodegeeks.com/wp-content/litespeed/localres/aHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS8=bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
+    <link rel="stylesheet" type="text/css" href="css/evo-calendar.css" />
+    <link rel="stylesheet" type="text/css" href="css/evo-calendar.royal-navy.css" />
+    <link href="evo-calendar.min.css" rel="stylesheet" />
+    <link href="evo-calendar.midnight-blue.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://www.webcodegeeks.com/wp-content/litespeed/localres/aHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS8=bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
 </head>
 <body class="w3-light-grey">
 
@@ -64,35 +72,70 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i>La-Trobe Staff Calendar</b></h5>
-  </header>
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i>La-Trobe Staff Calendar</b></h5>
+    </header>
 
-  <body>
+    <body>
 
 
-  
+
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="js/evo-calendar.min.js"></script>
 
         <div id="calendar"></div>
+        <div class="hero">
+            <div id="calendar"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="evo-calendar.min.js"></script>
 
-</body>
+        <script>
+            $(document).ready(function () {
+                $('#calendar').evoCalendar({
+                    theme: "Midnight Blue",
+                    calendarEvents: [
+                        {
+                            id: 'Welcome event', // Event's ID (required)
+                            name: "Check this out", // Event name (required)
+                            date: "March/22/2022", // Event date (required)
+                            description: "Welcome to this event",
+                            type: "holiday", // Event type (required)
+                            everyYear: true // Same event every year (optional)
+                        },
+                        {
+                            name: "Vacation Leave",
+                            badge: "02/13 - 02/15", // Event badge (optional)
+                            date: ["February/13/2020", "February/15/2020"], // Date range
+                            description: "Vacation leave for 3 days.", // Event description (optional)
+                            type: "event",
+                            color: "#63d867" // Event custom color (optional)
+                        }
+                    ]
+                })
+            })
+        </script>
+        <div class="calendar"></div>
+        <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
+        <script>
+            new Calendar(document.querySelector('.calendar'));
+        </script>
+    </body>
 
 
 
 
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <h4></h4>
+        <p> <a href="https://tempestiodesigns.com" target="_blank"></a></p>
+    </footer>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <h4>FOOTER</h4>
-    <p>Created by Alex Hudson <a href="https://tempestiodesigns.com" target="_blank">my website ;)</a></p>
-  </footer>
-  
-  <!-- End page content -->
+    <!-- End page content -->
 </div>
 
 <script>
