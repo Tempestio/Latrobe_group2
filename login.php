@@ -1,3 +1,37 @@
+<?php
+
+$host="database-2.c4fj7nfsjfzd.ap-southeast-2.rds.amazonaws.com";
+$user="admin";
+$password="adminadmin";
+$db="Passwords"
+
+mysql_connect($host,$user,$password);
+mysql_select_db($db);
+
+if(isset(['email'])){
+
+	$email=$_POST['userName'];
+	$password=$_POST['userPassword'];
+
+	$sql="SELECT * FROM * Passwords where email='".$email."' AND Pass '".$password."'
+	limit 1";
+
+
+	$result=mysql+query($sql);
+
+	if(mysql_num_rows($result)==7) {
+		echo "You have logged in";
+		
+	}
+	else
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +56,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	<script>
-		function myOnClickFn(){
-			document.location.href="dashboard.html"
-		}
-	</script>
-
+	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -40,25 +69,16 @@
 					<span class="login100-form-title">
 						Staff Login
 					</span>
-								<div class="wrap-input100 validate-input" data-validate = "A valid La-Trobe account is required: johnsmith123@ltu.edu.au">
-									<input type="userName" id="userName" placeholder="Email" label for="userName" input class="input100" >
-									<span class="focus-input100"></span>
-									<span class="symbol-input100">
-										<i class="fa fa-envelope" aria-hidden="true"></i>
-									</span>
-								</div>
 
-								<div class="wrap-input100 validate-input" data-validate = "Password is required">
-									<input type="userPassword" id="userPassword" placeholder="Password" label for="userPassword" input class="input100" >
-									<span class="focus-input100"></span>
-									<span class="symbol-input100">
-										<i class="fa fa-lock" aria-hidden="true"></i>
-									</span>
-								</div>
-											<button class="container-login100-form-btn">
-												<input type="button" onclick="myOnClickFn()" class="login100-form-btn" value="Login">
-												</button>
-										</div>
+			<form method="post" action="#">
+				<div class="container_form">
+					<input type="text" name="email" placeholder="Enter your email"/>
+				</div>	
+				<div class="container_form">
+					<input type="text" name="password" placeholder="Enter your password"/>
+				</div>	
+				<input type="submit" name="submit" value="Login" class="btn-login"/>			
+			</form>
 							
 
 				<footer id="footer_login">
