@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Latrobe Dashboard</title>
@@ -32,9 +32,7 @@
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"  onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">
-    <img src="images/La-Trobe.jpg" class="w3-circle w3-margin-right" style="width:200px">
-  </span>
+  <span class="w3-bar-item w3-right">Logo</span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -45,9 +43,9 @@
     </div>
     <div class="w3-col s8 w3-bar">
       <span>Welcome back, <strong>USER</strong></span><br>
-      <a href="https://outlook.office.com/mail/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="profile.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="inputform.html" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
     </div>
   </div>
   <hr>
@@ -79,7 +77,11 @@
         <h5><b><i class="fa fa-dashboard"></i>La-Trobe Subject Overview</b></h5>
     </header>
 <body>
-<table class="subject_table" caption="Subject List">
+
+
+<H1>Subject List</H1>
+<br>
+<table>
   <thead>
     <tr>
       <th class="subject_table" scope="col">Subject Code</th>
@@ -90,142 +92,26 @@
       <th scope="col">Status?</th>
     </tr>
   </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-    </tbody>
+  <?php
+
+$conn = mysqli_connect(" database-2.c4fj7nfsjfzd.ap-southeast-2.rds.amazonaws.com", "admin", "adminadmin", "sys");
+$sql = "SELECT * FROM  Subject";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0){
+  while ($row = $result-> fetch_assoc()) {
+    echo "<tr><td>" . $row["SubjectID"] . "</td><td>" . $row["SubjectName"] . "</td><td>" . $row["SubjectCode"] . "</td><td>";
+  }
+}
+else {
+  echo "No Results Found";
+}
+  ?>
 </table>  
 
 
-</body>
 
-
+      </body>
 
 
     
