@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Latrobe Dashboard</title>
@@ -18,16 +18,16 @@
     <link href="evo-calendar.min.css" rel="stylesheet" />
     <link href="evo-calendar.midnight-blue.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
+    
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://www.webcodegeeks.com/wp-content/litespeed/localres/aHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS8=bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style>
         html, body, h1, h2, h3, h4, h5 {
             font-family: "Raleway", sans-serif
         }
-
         #table-wrapper {
             position: absolute;
+
         }
 
         #table-scroll {
@@ -36,12 +36,8 @@
             margin-top: 200px;
         }
 
-        #table-wrapper table {
-            width: 100%;
-        }
-
             #table-wrapper table * {
-                background: yellow;
+                background: rgb(54, 54, 52);
                 color: black;
             }
 
@@ -50,7 +46,6 @@
                 top: -20px;
                 z-index: 2;
                 height: 20px;
-                width: 35%;
                 border: 1px solid red;
             }
     </style>
@@ -85,12 +80,13 @@
         <div class="w3-bar-block">
             <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
             <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
-            <a href="calendar.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Calendar</a>
-            <a href="inputform.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Lecturer Form</a>
-            <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Profile</a>
-            <a href="https://nextjs-docs-tempestio.vercel.app/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Documentation</a>
+            <a href="subjects.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Subjects</a>
+            <a href="inputform.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Staff Details</a>
+            <a href="calendar.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Subject Calendar</a>
+            <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  User Profile</a>
+            <a href="https://nextjs-docs-tempestio.vercel.app/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  System Documentation</a>
             <a href="index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Logout</a><br><br>
-        </div>
+          </div>
     </nav>
 
 
@@ -205,7 +201,7 @@
                                 date: "October/3/2022", // Event date (required)
                                 description: "CSE1ITX Information Technology Fundamentals, CSE1CFX Cloud Foundations, CSE1ISX Information Systems, CSE2NFX Network Engineering Fundamentals, CSE2DCX Database Fundamentals on the Cloud, CSE1SPX Sustainability Practices, CSE1SIX Information System Infrastructure, BUS2PMX Project Management, CSE3SOX System Operations on the Cloud, ",
                                 type: "October instance", // Event type (required)
-                                everyYear: false // Same event every year (optional)
+                                everyYear: true // Same event every year (optional)
                             },
                             {
                                 id: 'November instance', // Event's ID (required)
@@ -340,8 +336,8 @@
             </div>
 
         </body>
-        <div id="table-wrapper">
-            <div id="table-scroll">
+        <div id="myTable">
+            <div id="myTable">
                 <center><h>Calendar 2022</h></center>
                 <table border="1">
                     <tr>
@@ -551,7 +547,7 @@
                                     CSE1IOX	Intermediate Object Oriented Programming, <br />
 
                                     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
                                     <br />
                                 </td>
@@ -2145,7 +2141,7 @@
                                                     CSE3BDX	Big Data on the Cloud, <br />
                                                     <br /><br />
 
-
+                                                    <br />
 
 
 
@@ -2322,7 +2318,7 @@
                                                     CSE2CPX	Managing Projects in the Cloud, <br />
                                                     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-                                                    <br />
+                                                    <br /><br />
 
 
 
@@ -2596,13 +2592,13 @@
                                 </table>
             </div>
         </div>
-        <!-- Footer -->
-        <footer id="footer">
-            <h4></h4>
-            <p> <a href="https://tempestiodesigns.com" target="_blank"></a></p>
-        </footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <h4></h4>
+        <p> <a href="https://tempestiodesigns.com" target="_blank"></a></p>
+    </footer>
 
-        <!-- End page content -->
+    <!-- End page content -->
     </div>
 
     <script>
@@ -2632,4 +2628,3 @@
 
 </body>
 </html>
-

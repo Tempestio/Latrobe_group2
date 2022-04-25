@@ -122,6 +122,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="subjects.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Subjects</a>
     <a href="inputform.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Staff Details</a>
+    <a href="calendar.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Subject Calendar</a>
     <a href="profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  User Profile</a>
     <a href="https://nextjs-docs-tempestio.vercel.app/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  System Documentation</a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Logout</a><br><br>
@@ -148,31 +149,39 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
    <button class="open-button" onclick="openForm()">Open Staff Form</button>
 
    <div class="form-popup" id="myForm">
-     <form action="staff.php" class="form-container">
-       <h3>Add new Staff Member</h3>
-   
-       <label for="id"><b>ID</b></label>
-       <input type="text" placeholder="Enter ID" name="id" required>
-   
-       <label for="firstName"><b>First Name</b></label>
-       <input type="text" placeholder="Enter First Name" name="firstName" required>
+      <form method="post" action="staff.php" class="form-container">
+          <h3>Add new Staff Member</h3>
+      
+          <label for="id"><b>ID</b></label>
+          <input type="text" placeholder="Enter ID" name="id" required>
+      
+          <label for="firstName"><b>First Name</b></label>
+          <input type="text" placeholder="Enter First Name" name="firstName" required>
 
-       <label for="lastName"><b>Last Name</b></label>
-       <input type="text" placeholder="Enter Last Name" name="lastName" required>
+          <label for="lastName"><b>Last Name</b></label>
+          <input type="text" placeholder="Enter Last Name" name="lastName" required>
 
-       <label for="email"><b>Email</b></label>
-       <input type="text" placeholder="Enter Email Address" name="email" required>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email Address" name="email" required>
 
-       <label for="employment"><b>Employment Type:</b></label>
-          <select id="employment" name="employment">
-          <option value="partTime">Part Time</option>
-          <option value="fullTime">Full Time</option>
-       </select>
-
-       <button type="submit" class="btn">Submit</button>
-       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-     </form>
+          <label for="employment"><b>Employment Type:</b></label>
+              <select id="employment" name="employment">
+              <option value="partTime">Part Time</option>
+              <option value="fullTime">Full Time</option>
+          </select>
+            <fieldset>      
+                <legend>Expertise?</legend>      
+                <input type="checkbox" name="expertise" value="cybersecurity" >Cybersecurity<br>     
+                <input type="checkbox" name="expertise" value="dataAnalysis">Data Analysis <br>   
+                <input type="checkbox" name="expertise" value="webDev">Web Development<br>
+                <input type="checkbox" name="expertise" value="lecturing">Lecturing<br>     
+                <input type="checkbox" name="expertise" value="networking">Networking<br>         
+            </fieldset>
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
    </div>
+
    <script>
         function openForm() {
           document.getElementById("myForm").style.display = "block";
@@ -281,7 +290,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </tr>
       </tbody>
   </table>  
-  
+  <!-- To whom works on this, Alex, Mitch or Rhos, This needs PHP to be filled in -->
 
   <!-- End page content -->
 </div>
