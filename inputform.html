@@ -177,6 +177,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 <input type="checkbox" name="expertise" value="lecturing">Lecturing<br>     
                 <input type="checkbox" name="expertise" value="networking">Networking<br>         
             </fieldset>
+            <fieldset>      
+              <label for="weight"><b>Predicted Weight?</b></label>
+              <select id="weight" name="weight">
+              <option value="weight">1.0</option>
+              <option value="weight">0.8</option>
+              <option value="weight">0.6</option>
+              <option value="weight">0.4</option>
+              <option value="weight">0.2</option>
+          </select>         
+          </fieldset>
           <button type="submit" class="btn">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
@@ -193,13 +203,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
    </script>
    
   <!--Begin Table-->
-
+  <h4>Sort by<b> Alphabetical Staff Name</b></h4>
+  <p><button onclick="sortStaff()">Sort</button></p>
    <table class="subject_table" caption="Subject List">
     <thead>
       <tr>
-        <th class="subject_table" scope="col">User Name</th>
         <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
         <th scope="col">Email Address</th>
         <th scope="col">Workload Allocation</th>
         <th scope="col">Employment Type</th>
@@ -208,88 +217,123 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Acacia</td>
+            <td>Acacia@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Beech</td>
+            <td>Beech@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Cypress</td>
+            <td>Cypress@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Douglas</td>
+            <td>Douglas@latrobe.edu.au</td>
+            <td>0.8</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Eucalypt</td>
+            <td>Eucalypt@latrobe.edu.au</td>
+            <td>0.4</td>
+            <td>Part Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Flame</td>
+            <td>Flame@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Guava</td>
+            <td>Guava@latrobe.edu.au</td>
+            <td>0.6</td>
+            <td>Part Time</td>
             <td></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Hickory</td>
+            <td>Hickory@latrobe.edu.au</td>
+            <td>0.8</td>
+            <td>Part Time</td>
             <td></td>
           </tr>
           <tr>
-           <td></td>
+            <td>Ironbark</td>
+            <td>Ironbark@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Part Time</td>
             <td></td>
+          </tr>
+          <tr>
+            <td>Jacaranda</td>
+            <td>Jacaranda@latrobe.edu.au</td>
+            <td>0.4</td>
+            <td>Part Time</td>
             <td></td>
+
+          </tr>
+          <tr>
+            <td>Karri</td>
+            <td>Karri@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
+          </tr>
+          <tr>
+            <td>Laurel</td>
+            <td>Laurel@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
-            <td></td>
+          </tr>
+          <tr>
+            <td>Maple</td>
+            <td>Maple@latrobe.edu.au</td>
+            <td>1.0</td>
+            <td>Full Time</td>
             <td></td>
           </tr>
       </tbody>
   </table>  
+  <script>
+    function sortStaff() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>
   <!-- To whom works on this, Alex, Mitch or Rhos, This needs PHP to be filled in -->
 
   <!-- End page content -->
